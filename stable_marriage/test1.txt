@@ -1,0 +1,9 @@
+8
+1 M Yijun 5,7,6,8
+2 M Anupam 8,7,6,5
+3 M Ray 7,6,5,8
+4 M Henrik 6,7,5,6
+5 W Pallavi 1,2,3,4
+6 W Lilli 4,3,2,1
+7 W Carina 2,3,1,2
+8 W Yin 4,3,2,1
