@@ -6,10 +6,21 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class TraditionalMarriage {
+	int n;
+	Person[] people;
 
-	public static void main(String[] args) {
-		int n = 0;
-		Person[] people = null;
+	public TraditionalMarriage() {
+		n = 0;
+		people = null;
+	}
+
+	public TraditionalMarriage(String fileName) {
+		n = 0;
+		people = null;
+		readFile(fileName);
+	}
+
+	void readFile(String fileName) {
 		try {
 			File file = new File("test1.txt");
 			FileReader fileReader = new FileReader(file);
@@ -36,7 +47,6 @@ public class TraditionalMarriage {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 }
