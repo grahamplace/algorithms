@@ -1,3 +1,5 @@
+import test_algorithm
+
 def sort(A):
     n = len(A)
     for i in range(n):
@@ -8,30 +10,7 @@ def sort(A):
                 A[j + 1] = tmp
     return A
 
-
 def test(U, S):
-    print('\nBubble Sort:')
-    print('Testing Bubble Sort on Array:')
-    print('▶️  ', end='')
-    print(U)
-
-    # Confirm valid inputs:
-    if (len(U) != len(S)):
-        print('Input arrays do not have same length. Aborting test.')
-        return False
-
-    s = sort(U)
-    if s != S:
-        print('\n🚨  Arrays do not match! 🚨')
-        print('\nBubble Sort Output:')
-        print('❌  ', end='')
-        print(s)
-        print('\nSolution in File:')
-        print('✅  ', end='')
-        print(S)
-        return False
-    else:
-        print('\n🎊  Success! Sorted Array:')
-        print('✅  ', end='')
-        print(s)
-        return True
+    in_list = list(U)
+    output = sort(U)
+    return test_algorithm.test(in_list, output, S, 'Bubble')
