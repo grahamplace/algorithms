@@ -1,7 +1,7 @@
 import sys
 from os import listdir
 from os.path import isfile, join
-import bubble_sort, merge_sort, insertion_sort
+import bubble_sort, merge_sort, insertion_sort, quicksort
 
 def parse_input_str(s):
     s = s.replace(' ', '')
@@ -19,6 +19,7 @@ def test(U, S):
     bubble_sort.test(list(U), S)
     merge_sort.test(list(U), S)
     insertion_sort.test(list(U), S)
+    quicksort.test(list(U), S)
 
 def main():
     i = 1
