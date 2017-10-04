@@ -11,7 +11,7 @@ def test(U, output, S, name):
 
     if output != S:
         print('\n🚨  Arrays do not match! 🚨')
-        print('\n' + name + ' Sort Output:')
+        print('' + name + ' Sort Output:')
         print('❌  ', end='')
         print(output)
         print('\nSolution in File:')
