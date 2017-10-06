@@ -1,30 +1,29 @@
-import test_algorithm, random
+import test_algorithm, array_exchange
 
-def partition(A, low, high):
-    # select 3 random indices
-    r = []
-    for i in range(0, 3):
-        r.append(random.randrange(low, high))
-
-    # get median of these three elements:
-    min_r = 0
-    max_r = 0
-    for i in range(1, 3):
-        if r[i] < r[min_r]: min_r = i
-        if r[i] > r[max_r] : max_r = i
-    f = len(r) - max_r - min_r
-    return r[f]
-
-def sort(A, low, high):
-    if low < high:
-        p = partition(A, low, high)
-        sort(A, low, p-1)
-        sort(A, p+1, high)
+def exchange(A, i, j):
+    temp = A[i]
+    A[i] = A[j]
+    A[j] = temp
     return A
 
+def partition(A, p, r):
+    x = A[r]
+    i = p - 1
+    for j in range(p, r):
+        if A[j] <= x:
+            i += 1
+            array_exchange.exchange(A, i, j)
+    array_exchange.exchange(A, i + 1, r)
+    return i + 1
 
+def sort(A, p, r):
+    if p < r:
+        q = partition(A, p, r)
+        sort(A, p, q - 1)
+        sort(A, q + 1, r)
+    return A
 
 def test(U, S):
     in_list = list(U)
-    output = sort(U, 0, len(U))
-    return test_algorithm.test(in_list, output, S, 'Insertion')
+    output = sort(U, 0, len(U) - 1)
+    return test_algorithm.test(in_list, output, S, 'Quick')
