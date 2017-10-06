@@ -1,13 +1,11 @@
-import test_algorithm
+import test_algorithm, array_exchange
 
 def sort(A):
     n = len(A)
     for i in range(n):
         for j in range(0, n - i - 1):
             if A[j] > A[j + 1]:
-                tmp = A[j]
-                A[j] = A[j + 1]
-                A[j + 1] = tmp
+                array_exchange.exchange(A, j, j + 1)
     return A
 
 def test(U, S):

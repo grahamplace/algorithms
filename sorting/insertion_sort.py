@@ -1,16 +1,12 @@
-import test_algorithm
+import test_algorithm, array_exchange
 
 def sort(A):
     i = 1
     for i in range(1,len(A)):
         for j in range(i - 1, -1, -1):
             if A[j] < A[j + 1] : break
-            temp = A[j]
-            A[j] = A[j + 1]
-            A[j + 1] = temp
+            array_exchange.exchange(A, j, j + 1)
     return A
-
-
 
 def test(U, S):
     in_list = list(U)
